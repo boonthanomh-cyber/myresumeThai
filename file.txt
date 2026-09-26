@@ -1,0 +1,6 @@
+devops-resume/
+├── index.html
+├── style.css
+├── script.js
+└── images/
+    └── profile.jpg
