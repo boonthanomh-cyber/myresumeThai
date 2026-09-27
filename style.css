@@ -927,3 +927,78 @@ a.contact-value:hover {
     text-decoration: none;
   }
 }
+.language-switcher {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(82px, 1fr));
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid rgba(103, 232, 249, 0.45);
+  border-radius: 13px;
+  background: rgba(2, 6, 23, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.language-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #bae6fd;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.language-flag {
+  width: 24px;
+  border-radius: 3px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35);
+}
+
+.language-button:hover {
+  border-color: rgba(125, 211, 252, 0.5);
+  background: rgba(56, 189, 248, 0.18);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.language-button.active {
+  border-color: #67e8f9;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  color: #ffffff;
+  box-shadow:
+    0 5px 16px rgba(6, 182, 212, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.language-button:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+@media (max-width: 680px) {
+  .language-switcher {
+    width: 100%;
+  }
+
+  .language-button {
+    width: 100%;
+  }
+}
+
+@media print {
+  .language-switcher {
+    display: none;
+  }
+}

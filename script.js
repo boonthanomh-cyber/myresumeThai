@@ -75,3 +75,147 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+const slideshow = document.getElementById("portfolioSlideshow");
+
+if (slideshow) {
+  const slides = Array.from(slideshow.querySelectorAll(".slide"));
+  const dots = Array.from(slideshow.querySelectorAll(".slide-dot"));
+  const previousButton = slideshow.querySelector(".slide-previous");
+  const nextButton = slideshow.querySelector(".slide-next");
+  const autoplayButton = slideshow.querySelector(".slide-autoplay");
+
+  const autoplayDelay = 5000;
+
+  let currentSlide = 0;
+  let autoplayTimer = null;
+  let isPaused = false;
+
+  function showSlide(index) {
+    if (!slides.length) {
+      return;
+    }
+
+    currentSlide = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === currentSlide;
+
+      slide.classList.toggle("active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === currentSlide;
+
+      dot.classList.toggle("active", isActive);
+      dot.setAttribute("aria-current", String(isActive));
+    });
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  function startAutoplay() {
+    window.clearInterval(autoplayTimer);
+
+    if (!isPaused && slides.length > 1) {
+      autoplayTimer = window.setInterval(
+        showNextSlide,
+        autoplayDelay
+      );
+    }
+  }
+
+  function stopAutoplay() {
+    window.clearInterval(autoplayTimer);
+  }
+
+  function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  function updateAutoplayButton() {
+    if (!autoplayButton) {
+      return;
+    }
+
+    const icon = autoplayButton.querySelector("i");
+
+    autoplayButton.setAttribute(
+      "aria-pressed",
+      String(isPaused)
+    );
+
+    autoplayButton.setAttribute(
+      "aria-label",
+      isPaused
+        ? "เริ่มการเลื่อนภาพอัตโนมัติ"
+        : "หยุดการเลื่อนภาพอัตโนมัติ"
+    );
+
+    if (icon) {
+      icon.className = isPaused
+        ? "fa-solid fa-play"
+        : "fa-solid fa-pause";
+    }
+  }
+
+  previousButton?.addEventListener("click", () => {
+    showPreviousSlide();
+    restartAutoplay();
+  });
+
+  nextButton?.addEventListener("click", () => {
+    showNextSlide();
+    restartAutoplay();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const targetSlide = Number(dot.dataset.slide);
+
+      showSlide(targetSlide);
+      restartAutoplay();
+    });
+  });
+
+  autoplayButton?.addEventListener("click", () => {
+    isPaused = !isPaused;
+    updateAutoplayButton();
+
+    if (isPaused) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
+
+  // รองรับปุ่มลูกศรบนแป้นพิมพ์
+  slideshow.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      showPreviousSlide();
+      restartAutoplay();
+    }
+
+    if (event.key === "ArrowRight") {
+      showNextSlide();
+      restartAutoplay();
+    }
+  });
+
+  // หยุดชั่วคราวเมื่อชี้เมาส์หรือโฟกัสอยู่ใน Slideshow
+  slideshow.addEventListener("mouseenter", stopAutoplay);
+  slideshow.addEventListener("mouseleave", startAutoplay);
+  slideshow.addEventListener("focusin", stopAutoplay);
+  slideshow.addEventListener("focusout", startAutoplay);
+
+  showSlide(0);
+  updateAutoplayButton();
+  startAutoplay();
+}

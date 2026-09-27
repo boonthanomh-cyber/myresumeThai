@@ -18,6 +18,12 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/flag-icons@7.3.2/css/flag-icons.min.css"
+>
+
+<link rel="stylesheet" href="style.css">
 
   <link
     rel="stylesheet"
@@ -68,6 +74,29 @@
       </div>
 
       <div class="header-actions">
+       <div class="language-switcher" aria-label="เลือกภาษา">
+  <button
+    class="language-button active"
+    type="button"
+    data-language="th"
+    aria-label="เปลี่ยนเป็นภาษาไทย"
+    aria-pressed="true"
+  >
+    <span class="fi fi-th language-flag" aria-hidden="true"></span>
+    <span>ไทย</span>
+  </button>
+
+  <button
+    class="language-button"
+    type="button"
+    data-language="en"
+    aria-label="Switch to English"
+    aria-pressed="false"
+  >
+    <span class="fi fi-gb language-flag" aria-hidden="true"></span>
+    <span>EN</span>
+  </button>
+</div>
         <a
           class="action-button primary-button"
           href="mailto:Boonthanom.h@gmail.com"
