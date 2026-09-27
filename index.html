@@ -849,7 +849,150 @@
             <div class="section-icon">
               <i class="fa-solid fa-laptop-code"></i>
             </div>
+#เพิ่ม Silde Show image
+<section class="section-card slideshow-section">
+  <div class="section-heading">
+    <div class="section-icon">
+      <i class="fa-solid fa-images"></i>
+    </div>
 
+    <div>
+      <span class="section-subtitle">Gallery</span>
+      <h2 data-i18n="galleryHeading">ภาพผลงาน</h2>
+    </div>
+  </div>
+
+  <div class="section-body">
+    <div
+      class="slideshow"
+      id="portfolioSlideshow"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="ภาพผลงาน DevOps"
+      tabindex="0"
+    >
+      <div class="slideshow-track">
+
+        <!-- Slide 1 -->
+        <article class="slide active" aria-hidden="false">
+          <img
+            src="images/slideshow/devops-project-1.jpg"
+            alt="ภาพผลงานระบบ CI/CD Pipeline"
+          >
+
+          <div class="slide-overlay">
+            <span class="slide-number">01 / 03</span>
+
+            <h3 data-i18n="slideTitle1">
+              CI/CD Pipeline Automation
+            </h3>
+
+            <p data-i18n="slideDescription1">
+              ระบบ Build, Test และ Deploy อัตโนมัติด้วย Jenkins และ GitLab CI/CD
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 2 -->
+        <article class="slide" aria-hidden="true">
+          <img
+            src="images/slideshow/devops-project-2.jpg"
+            alt="ภาพผลงาน Kubernetes Infrastructure"
+            loading="lazy"
+          >
+
+          <div class="slide-overlay">
+            <span class="slide-number">02 / 03</span>
+
+            <h3 data-i18n="slideTitle2">
+              Kubernetes Infrastructure
+            </h3>
+
+            <p data-i18n="slideDescription2">
+              บริหาร Container และ Deployment ด้วย Kubernetes, Docker และ Helm
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 3 -->
+        <article class="slide" aria-hidden="true">
+          <img
+            src="images/slideshow/devops-project-3.jpg"
+            alt="ภาพผลงาน Monitoring Dashboard"
+            loading="lazy"
+          >
+
+          <div class="slide-overlay">
+            <span class="slide-number">03 / 03</span>
+
+            <h3 data-i18n="slideTitle3">
+              Monitoring &amp; Observability
+            </h3>
+
+            <p data-i18n="slideDescription3">
+              Dashboard สำหรับตรวจสอบระบบด้วย Grafana และ Prometheus
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Previous button -->
+      <button
+        class="slide-control slide-previous"
+        type="button"
+        aria-label="ภาพก่อนหน้า"
+      >
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+
+      <!-- Next button -->
+      <button
+        class="slide-control slide-next"
+        type="button"
+        aria-label="ภาพถัดไป"
+      >
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+      <!-- Indicators -->
+      <div class="slide-indicators" aria-label="เลือกภาพ">
+        <button
+          class="slide-dot active"
+          type="button"
+          data-slide="0"
+          aria-label="แสดงภาพที่ 1"
+          aria-current="true"
+        ></button>
+
+        <button
+          class="slide-dot"
+          type="button"
+          data-slide="1"
+          aria-label="แสดงภาพที่ 2"
+          aria-current="false"
+        ></button>
+
+        <button
+          class="slide-dot"
+          type="button"
+          data-slide="2"
+          aria-label="แสดงภาพที่ 3"
+          aria-current="false"
+        ></button>
+      </div>
+
+      <!-- Play/Pause button -->
+      <button
+        class="slide-autoplay"
+        type="button"
+        aria-label="หยุดการเลื่อนภาพอัตโนมัติ"
+        aria-pressed="false"
+      >
+        <i class="fa-solid fa-pause" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</section>
             <div>
               <span class="section-subtitle">Portfolio</span>
               <h2>Demo Projects</h2>
