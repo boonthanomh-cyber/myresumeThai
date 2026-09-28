@@ -218,4 +218,34 @@ if (slideshow) {
   showSlide(0);
   updateAutoplayButton();
   startAutoplay();
+<h1 data-i18n="fullName">บุญถนอม หาญกลาง</h1>
+
+<p class="job-title" data-i18n="jobTitle">
+  DevOps Engineer และ System Engineer
+</p>
+
+<p class="profile-summary" data-i18n="profileSummary">
+  มีประสบการณ์ด้านการบริหาร Cloud Infrastructure, CI/CD,
+  Infrastructure as Code, Kubernetes, Monitoring และ Linux Server
+</p>
+
+<div class="availability">
+  <span class="availability-dot"></span>
+  <span data-i18n="availability">
+    กำลังมองหาโอกาสงานด้าน DevOps และ Cloud Engineering
+  </span>
+</div>
+  downloadButton: "ดาวน์โหลด Resume",
+
 }
+// ภาษาไทย
+galleryHeading: "ภาพผลงาน",
+slideTitle1: "ระบบ CI/CD อัตโนมัติ",
+slideDescription1:
+  "ระบบ Build, Test และ Deploy อัตโนมัติด้วย Jenkins และ GitLab CI/CD",
+slideTitle2: "โครงสร้างพื้นฐาน Kubernetes",
+slideDescription2:
+  "บริหาร Container และ Deployment ด้วย Kubernetes, Docker และ Helm",
+slideTitle3: "Monitoring และ Observability",
+slideDescription3:
+  "Dashboard สำหรับตรวจสอบระบบด้วย Grafana และ Prometheus",
