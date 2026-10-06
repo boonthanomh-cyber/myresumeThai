@@ -1,2 +1,2 @@
 # myresumeThai
-Learn-CICD-Git-Action  work with ChatGPT codex
+Learn-Test-CICD-Git-Action  work with ChatGPT codex
