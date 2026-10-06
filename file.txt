@@ -1,6 +1,13 @@
-devops-resume/
+myresumeThai/
 ├── index.html
 ├── style.css
 ├── script.js
-└── images/
-    └── profile.jpg
+├── images/
+│   ├── profile.jpg            ← ตัวพิมพ์เล็กทั้งหมด
+│   ├── og-cover.jpg           ← 1200x630 px สำหรับ preview ตอนแชร์
+│   └── slideshow/
+│       ├── devops-project-1.jpg
+│       ├── devops-project-2.jpg
+│       └── devops-project-3.jpg
+└── documents/
+    └── Boonthanom-Hanklang-Resume.pdf
