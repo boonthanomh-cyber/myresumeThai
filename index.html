@@ -6,84 +6,258 @@
   <meta name="theme-color" content="#0f172a">
 
   <title>บุญถนอม หาญกลาง | DevOps Engineer</title>
-  <meta name="description" content="Resume และ Portfolio ของบุญถนอม หาญกลาง DevOps Engineer ผู้เชี่ยวชาญด้าน Cloud, CI/CD, Kubernetes และ Terraform">
+  <meta
+    name="description"
+    content="Resume และ Portfolio ของบุญถนอม หาญกลาง DevOps Engineer ด้าน Cloud, CI/CD, Kubernetes และ Terraform"
+  >
   <meta name="author" content="Boonthanom Hanklang">
-  <link rel="canonical" href="https://boonthanomh-cyber.github.io/myresumeThai/">
 
-  <!-- Social preview -->
+  <link
+    rel="canonical"
+    href="https://boonthanomh-cyber.github.io/myresumeThai/"
+  >
+
+  <!-- ใช้รูปโปรไฟล์เป็น favicon; JavaScript ด้านล่างจะปรับ path ให้ตรงกับไฟล์ที่พบ -->
+  <link
+    id="siteFavicon"
+    rel="icon"
+    type="image/jpeg"
+    href="images/profile.jpg"
+  >
+
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="th_TH">
-  <meta property="og:title" content="บุญถนอม หาญกลาง | DevOps Engineer">
-  <meta property="og:description" content="DevOps Engineer — Cloud, CI/CD, Kubernetes, Terraform">
-  <meta property="og:url" content="https://boonthanomh-cyber.github.io/myresumeThai/">
-  <meta property="og:image" content="https://boonthanomh-cyber.github.io/myresumeThai/images/og-cover.jpg">
+  <meta
+    property="og:title"
+    content="บุญถนอม หาญกลาง | DevOps Engineer"
+  >
+  <meta
+    property="og:description"
+    content="DevOps Engineer — Cloud, CI/CD, Kubernetes และ Terraform"
+  >
+  <meta
+    property="og:url"
+    content="https://boonthanomh-cyber.github.io/myresumeThai/"
+  >
+  <meta
+    property="og:image"
+    content="https://boonthanomh-cyber.github.io/myresumeThai/images/og-cover.jpg"
+  >
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icon libraries -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.3.2/css/flag-icons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-  <!-- CSS ของเราต้องมาท้ายสุดเสมอ เพื่อให้ override CDN ได้ -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/flag-icons@7.3.2/css/flag-icons.min.css"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- ปรับเฉพาะจุดที่ style.css เดิมยังไม่ครอบคลุม -->
+  <style>
+    .profile-photo-wrapper {
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .profile-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    .profile-photo-fallback {
+      display: none;
+      position: absolute;
+      inset: 4px;
+      place-items: center;
+      border-radius: 50%;
+      background: #1e293b;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .profile-photo-wrapper.is-missing .profile-photo {
+      display: none;
+    }
+
+    .profile-photo-wrapper.is-missing .profile-photo-fallback {
+      display: grid;
+    }
+
+    .contact-highlight {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: .8rem;
+    }
+
+    .phone-number {
+      display: inline-block;
+      color: #1d4ed8;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .contact-item > div:last-child {
+      min-width: 0;
+    }
+
+    .contact-value {
+      overflow-wrap: anywhere;
+    }
+
+    .address-value {
+      display: block;
+      line-height: 1.7;
+    }
+
+    button.contact-copy {
+      border: 0;
+      padding: .15rem .3rem;
+      margin-left: -.3rem;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    button.contact-copy:hover:not(:disabled) {
+      background: #dcfce7;
+    }
+
+    button.contact-copy:disabled {
+      cursor: default;
+      opacity: .7;
+    }
+
+    button.contact-copy.copied {
+      color: #047857;
+      background: #dcfce7;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media print {
+      .section-card {
+        break-inside: auto;
+      }
+
+      .experience-card,
+      .education-block,
+      .training-item {
+        break-inside: avoid;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#mainContent" data-i18n="skipLink">ข้ามไปยังเนื้อหาหลัก</a>
+  <a class="skip-link" href="#mainContent" data-i18n="skipLink">
+    ข้ามไปยังเนื้อหาหลัก
+  </a>
 
   <div class="page-container">
 
-    <!-- ===================== PROFILE HEADER ===================== -->
+    <!-- ส่วนหัว -->
     <header class="profile-header">
-      <div class="profile-photo-wrapper">
-        <img class="profile-photo"
-             src="images/profile.jpg"
-             alt="ภาพโปรไฟล์ของบุญถนอม หาญกลาง"
-             width="160" height="160"
-             fetchpriority="high">
+      <div class="profile-photo-wrapper" id="profilePhotoWrapper">
+        <img
+          class="profile-photo"
+          id="profilePhoto"
+          src="images/profile.jpg"
+          alt="ภาพโปรไฟล์ของบุญถนอม หาญกลาง"
+          width="160"
+          height="160"
+          fetchpriority="high"
+        >
+        <span class="profile-photo-fallback" aria-hidden="true">BH</span>
       </div>
 
       <div class="profile-title">
         <p class="profile-label">
           <i class="fa-solid fa-terminal" aria-hidden="true"></i>
-          <span data-i18n="roleLabel">DEVOPS ENGINEER</span>
+          <span>DEVOPS ENGINEER</span>
         </p>
 
-        <h1>บุญถนอม หาญกลาง</h1>
+        <h1 data-i18n="name">บุญถนอม หาญกลาง</h1>
         <p class="english-name">Boonthanom Hanklang</p>
-        <p class="job-title" data-i18n="jobTitle">DevOps Engineer &amp; System Engineer</p>
+        <p class="job-title">
+          DevOps Engineer &amp; System Engineer
+        </p>
 
         <p class="profile-summary" data-i18n="summary">
-          มีประสบการณ์ด้านการจัดการ Cloud Infrastructure, CI/CD, Infrastructure as Code,
-          Kubernetes, Monitoring และ Linux Server พร้อมประสบการณ์ดูแลระบบบน AWS,
+          มีประสบการณ์ด้าน Cloud Infrastructure, CI/CD, Infrastructure as Code,
+          Kubernetes, Monitoring และ Linux Server รวมถึงการดูแลระบบบน AWS,
           Microsoft Azure และ Google Cloud
         </p>
 
         <p class="availability">
           <span class="availability-dot" aria-hidden="true"></span>
-          <span data-i18n="availability">กำลังมองหาโอกาสงานด้าน DevOps และ Cloud Engineering</span>
+          <span data-i18n="availability">
+            กำลังมองหาโอกาสงานด้าน DevOps และ Cloud Engineering
+          </span>
         </p>
       </div>
 
       <div class="header-actions">
-        <div class="language-switcher" role="group" aria-label="เลือกภาษา / Select language">
-          <button class="language-button active" type="button" data-language="th"
-                  aria-label="เปลี่ยนเป็นภาษาไทย" aria-pressed="true">
+        <div
+          class="language-switcher"
+          role="group"
+          aria-label="เลือกภาษา / Select language"
+        >
+          <button
+            class="language-button active"
+            type="button"
+            data-language="th"
+            aria-pressed="true"
+          >
             <span class="fi fi-th language-flag" aria-hidden="true"></span>
             <span>ไทย</span>
           </button>
-          <button class="language-button" type="button" data-language="en"
-                  aria-label="Switch to English" aria-pressed="false">
+
+          <button
+            class="language-button"
+            type="button"
+            data-language="en"
+            aria-pressed="false"
+          >
             <span class="fi fi-gb language-flag" aria-hidden="true"></span>
             <span>EN</span>
           </button>
         </div>
 
-        <a class="action-button primary-button" href="mailto:your.email@example.com">
+        <!-- หากยังไม่ใส่อีเมลจริง ปุ่มนี้จะพาไปยังส่วนติดต่อแทน -->
+        <a class="action-button primary-button" id="contactButton" href="#contact">
           <i class="fa-solid fa-envelope" aria-hidden="true"></i>
           <span data-i18n="contactButton">ติดต่อฉัน</span>
         </a>
@@ -93,10 +267,11 @@
           <span data-i18n="printButton">บันทึกเป็น PDF</span>
         </button>
 
-        <a class="action-button download-button"
-           href="documents/Boonthanom-Hanklang-Resume.pdf"
-           download="Boonthanom-Hanklang-Resume.pdf"
-           aria-label="ดาวน์โหลด Resume ของ Boonthanom Hanklang">
+        <a
+          class="action-button download-button"
+          href="documents/Boonthanom-Hanklang-Resume.pdf"
+          download="Boonthanom-Hanklang-Resume.pdf"
+        >
           <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
           <span data-i18n="downloadButton">ดาวน์โหลด Resume</span>
         </a>
@@ -105,13 +280,15 @@
 
     <div class="resume-layout">
 
-      <!-- ===================== SIDEBAR ===================== -->
+      <!-- คอลัมน์ซ้าย -->
       <aside class="sidebar">
 
-        <!-- Contact -->
-        <section class="section-card">
+        <!-- ข้อมูลติดต่อ -->
+        <section class="section-card" id="contact">
           <div class="section-heading">
-            <div class="section-icon"><i class="fa-solid fa-address-card" aria-hidden="true"></i></div>
+            <div class="section-icon">
+              <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+            </div>
             <div>
               <span class="section-subtitle">Contact</span>
               <h2 data-i18n="contactHeading">ข้อมูลติดต่อ</h2>
@@ -121,74 +298,121 @@
           <div class="section-body">
             <ul class="contact-list">
 
-              <!-- เบอร์โทรศัพท์ (เด่นชัด คลิกโทรออกได้) -->
               <li class="contact-item contact-highlight">
-                <div class="contact-icon phone-icon"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></div>
+                <div class="contact-icon phone-icon">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                </div>
                 <div>
-                  <span class="contact-label" data-i18n="labelPhone">เบอร์โทรศัพท์</span>
-                  <a class="contact-value phone-number" href="tel:+66949643966">094-964-3966</a>
+                  <span class="contact-label" data-i18n="labelPhone">
+                    เบอร์โทรศัพท์
+                  </span>
+                  <a class="contact-value phone-number" id="phoneLink">
+                    ***-***-****
+                  </a>
                 </div>
               </li>
 
-              <!-- อีเมล -->
               <li class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+                <div class="contact-icon">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </div>
                 <div>
-                  <span class="contact-label" data-i18n="labelEmail">อีเมล</span>
-                  <a class="contact-value" href="mailto:boonthanom.h@gmail.com">boonthanom.h@gmail.com</a>
+                  <span class="contact-label" data-i18n="labelEmail">
+                    อีเมล
+                  </span>
+                  <a class="contact-value" id="emailLink">
+                    **********.*@*****.***
+                  </a>
                 </div>
               </li>
 
-              <!-- Line ID (คลิกคัดลอกได้) -->
               <li class="contact-item">
-                <div class="contact-icon line-icon"><i class="fa-brands fa-line" aria-hidden="true"></i></div>
+                <div class="contact-icon line-icon">
+                  <i class="fa-brands fa-line" aria-hidden="true"></i>
+                </div>
                 <div>
-                  <span class="contact-label" data-i18n="labelLine">Line ID</span>
-                  <span class="contact-value contact-copy" data-copy="0949643966" role="button" tabindex="0" title="คลิกเพื่อคัดลอก">
-                    0949643966
+                  <span class="contact-label">Line ID</span>
+                  <button
+                    class="contact-value contact-copy"
+                    id="lineCopyButton"
+                    type="button"
+                    aria-label="คัดลอก Line ID"
+                    disabled
+                  >
+                    <span id="lineValue">**********</span>
                     <i class="fa-regular fa-copy copy-icon" aria-hidden="true"></i>
-                  </span>
+                  </button>
                 </div>
               </li>
 
-              <!-- ที่อยู่ -->
               <li class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                <div class="contact-icon">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                </div>
                 <div>
-                  <span class="contact-label" data-i18n="labelAddress">ที่อยู่/ที่พัก</span>
-                  <span class="contact-value address-value" data-i18n="addressValue">
-                    บางนาอพาร์ตเมนต์ ซอยสุขุมวิท 70/5<br>แขวงบางนา เขตบางนา กรุงเทพฯ 10260
+                  <span class="contact-label" data-i18n="labelAddress">
+                    ที่อยู่/ที่พัก
+                  </span>
+                  <span
+                    class="contact-value address-value"
+                    data-i18n="addressValue"
+                  >
+                    บางนาอพาร์ตเมนต์ ซอยสุขุมวิท 70/5 แขวงบางนา เขตบางนา
+                    กรุงเทพฯ 10260
                   </span>
                 </div>
               </li>
 
-              <!-- GitHub -->
               <li class="contact-item">
-                <div class="contact-icon github-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></div>
+                <div class="contact-icon github-icon">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </div>
                 <div>
                   <span class="contact-label">GitHub</span>
-                  <a class="contact-value" href="https://github.com/boonthanomh-cyber"
-                     target="_blank" rel="noopener noreferrer">github.com/boonthanomh-cyber</a>
+                  <a
+                    class="contact-value"
+                    href="https://github.com/boonthanomh-cyber"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    github.com/boonthanomh-cyber
+                  </a>
                 </div>
               </li>
 
-              <!-- LinkedIn -->
               <li class="contact-item">
-                <div class="contact-icon linkedin-icon"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></div>
+                <div class="contact-icon linkedin-icon">
+                  <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                </div>
                 <div>
                   <span class="contact-label">LinkedIn</span>
-                  <a class="contact-value" href="https://linkedin.com/in/boonthanom-hanklang"
-                     target="_blank" rel="noopener noreferrer">boonthanom-hanklang</a>
+                  <a
+                    class="contact-value"
+                    href="https://linkedin.com/in/boonthanom-hanklang"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    boonthanom-hanklang
+                  </a>
                 </div>
               </li>
             </ul>
+
+            <span
+              class="visually-hidden"
+              id="copyStatus"
+              role="status"
+              aria-live="polite"
+            ></span>
           </div>
         </section>
 
-        <!-- Skills -->
+        <!-- ทักษะ -->
         <section class="section-card">
           <div class="section-heading">
-            <div class="section-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></div>
+            <div class="section-icon">
+              <i class="fa-solid fa-gears" aria-hidden="true"></i>
+            </div>
             <div>
               <span class="section-subtitle">Technology Stack</span>
               <h2 data-i18n="skillsHeading">ทักษะด้านเทคนิค</h2>
@@ -198,12 +422,13 @@
           <div class="section-body">
             <div class="skill-group">
               <h3 class="skill-group-title">
-                <i class="fa-solid fa-cloud" aria-hidden="true"></i> Cloud Platforms
+                <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+                Cloud Platforms
               </h3>
               <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonwebservices.svg" alt="" width="16" height="16">AWS</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg" alt="" width="16" height="16">Azure</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlecloud.svg" alt="" width="16" height="16">GCP</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Azure</span>
+                <span class="skill-tag">GCP</span>
                 <span class="skill-tag">Serverless</span>
                 <span class="skill-tag">Microservices</span>
               </div>
@@ -211,36 +436,39 @@
 
             <div class="skill-group">
               <h3 class="skill-group-title">
-                <i class="fa-solid fa-code-branch" aria-hidden="true"></i> CI/CD &amp; Automation
+                <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+                CI/CD &amp; Automation
               </h3>
               <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg" alt="" width="16" height="16">Jenkins</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gitlab.svg" alt="" width="16" height="16">GitLab CI/CD</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/githubactions.svg" alt="" width="16" height="16">GitHub Actions</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/terraform.svg" alt="" width="16" height="16">Terraform</span>
+                <span class="skill-tag">Jenkins</span>
+                <span class="skill-tag">GitLab CI/CD</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">Terraform</span>
                 <span class="skill-tag">CloudFormation</span>
               </div>
             </div>
 
             <div class="skill-group">
               <h3 class="skill-group-title">
-                <i class="fa-solid fa-cubes" aria-hidden="true"></i> Containers
+                <i class="fa-solid fa-cubes" aria-hidden="true"></i>
+                Containers
               </h3>
               <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/docker.svg" alt="" width="16" height="16">Docker</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kubernetes.svg" alt="" width="16" height="16">Kubernetes</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/helm.svg" alt="" width="16" height="16">Helm</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Helm</span>
               </div>
             </div>
 
             <div class="skill-group">
               <h3 class="skill-group-title">
-                <i class="fa-solid fa-chart-line" aria-hidden="true"></i> Monitoring
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                Monitoring
               </h3>
               <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/prometheus.svg" alt="" width="16" height="16">Prometheus</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/grafana.svg" alt="" width="16" height="16">Grafana</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/datadog.svg" alt="" width="16" height="16">Datadog</span>
+                <span class="skill-tag">Prometheus</span>
+                <span class="skill-tag">Grafana</span>
+                <span class="skill-tag">Datadog</span>
                 <span class="skill-tag">ELK Stack</span>
                 <span class="skill-tag">Nagios</span>
                 <span class="skill-tag">IBM Tivoli</span>
@@ -251,12 +479,13 @@
 
             <div class="skill-group">
               <h3 class="skill-group-title">
-                <i class="fa-solid fa-server" aria-hidden="true"></i> Operating Systems
+                <i class="fa-solid fa-server" aria-hidden="true"></i>
+                Operating Systems
               </h3>
               <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg" alt="" width="16" height="16">Linux</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ubuntu.svg" alt="" width="16" height="16">Ubuntu</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redhat.svg" alt="" width="16" height="16">Red Hat</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Ubuntu</span>
+                <span class="skill-tag">Red Hat</span>
                 <span class="skill-tag">CentOS</span>
                 <span class="skill-tag">Windows Server</span>
                 <span class="skill-tag">Hyper-V</span>
@@ -266,19 +495,21 @@
 
             <div class="skill-group">
               <h3 class="skill-group-title">
-                <i class="fa-solid fa-database" aria-hidden="true"></i> Database
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+                Database
               </h3>
               <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mysql.svg" alt="" width="16" height="16">MySQL</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mongodb.svg" alt="" width="16" height="16">MongoDB</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazondynamodb.svg" alt="" width="16" height="16">DynamoDB</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">DynamoDB</span>
                 <span class="skill-tag">MS SQL Server</span>
               </div>
             </div>
 
             <div class="skill-group">
               <h3 class="skill-group-title">
-                <i class="fa-solid fa-code" aria-hidden="true"></i> Programming &amp; Web
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+                Programming &amp; Web
               </h3>
               <div class="skill-tags">
                 <span class="skill-tag">Shell Script</span>
@@ -298,10 +529,12 @@
           </div>
         </section>
 
-        <!-- Languages -->
+        <!-- ภาษา -->
         <section class="section-card">
           <div class="section-heading">
-            <div class="section-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></div>
+            <div class="section-icon">
+              <i class="fa-solid fa-language" aria-hidden="true"></i>
+            </div>
             <div>
               <span class="section-subtitle">Language</span>
               <h2 data-i18n="languageHeading">ภาษาอังกฤษ</h2>
@@ -311,46 +544,58 @@
           <div class="section-body">
             <div class="language-item">
               <div class="language-row">
-                <span data-i18n="langListening">การฟัง</span>
-                <span class="language-level" data-i18n="levelIntermediate">ดี</span>
-              </div>
-              <div class="progress"><span class="progress-bar" data-width="80"></span></div>
-            </div>
-
-            <div class="language-item">
-              <div class="language-row">
-                <span data-i18n="langSpeaking">การพูด</span>
-                <span class="language-level" data-i18n="levelIntermediate2">ดี</span>
-              </div>
-              <div class="progress"><span class="progress-bar" data-width="80"></span></div>
-            </div>
-
-            <div class="language-item">
-              <div class="language-row">
-                <span data-i18n="langReading">การอ่าน</span>
+                <span data-i18n="listening">การฟัง</span>
                 <span class="language-level" data-i18n="levelGood">ดี</span>
               </div>
-              <div class="progress"><span class="progress-bar" data-width="80"></span></div>
+              <div class="progress">
+                <span class="progress-bar" data-width="80"></span>
+              </div>
             </div>
 
             <div class="language-item">
               <div class="language-row">
-                <span data-i18n="langWriting">การเขียน</span>
-                <span class="language-level" data-i18n="levelGood2">ปานกลาง</span>
+                <span data-i18n="speaking">การพูด</span>
+                <span class="language-level" data-i18n="levelGood">ดี</span>
               </div>
-              <div class="progress"><span class="progress-bar" data-width="80"></span></div>
+              <div class="progress">
+                <span class="progress-bar" data-width="80"></span>
+              </div>
+            </div>
+
+            <div class="language-item">
+              <div class="language-row">
+                <span data-i18n="reading">การอ่าน</span>
+                <span class="language-level" data-i18n="levelGood">ดี</span>
+              </div>
+              <div class="progress">
+                <span class="progress-bar" data-width="80"></span>
+              </div>
+            </div>
+
+            <div class="language-item">
+              <div class="language-row">
+                <span data-i18n="writing">การเขียน</span>
+                <span class="language-level" data-i18n="levelIntermediate">
+                  ปานกลาง
+                </span>
+              </div>
+              <div class="progress">
+                <span class="progress-bar" data-width="60"></span>
+              </div>
             </div>
           </div>
         </section>
       </aside>
 
-      <!-- ===================== MAIN CONTENT ===================== -->
-      <main class="main-content" id="mainContent">
+      <!-- คอลัมน์ขวา -->
+      <main class="main-content" id="mainContent" tabindex="-1">
 
-        <!-- Experience -->
+        <!-- ประสบการณ์ -->
         <section class="section-card">
           <div class="section-heading">
-            <div class="section-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div>
+            <div class="section-icon">
+              <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+            </div>
             <div>
               <span class="section-subtitle">Professional Experience</span>
               <h2 data-i18n="experienceHeading">ประสบการณ์ทำงาน</h2>
@@ -362,7 +607,7 @@
 
               <article class="experience-card">
                 <div class="experience-marker">
-                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kubernetes.svg" alt="" width="22" height="22">
+                  <i class="fa-solid fa-cloud" aria-hidden="true"></i>
                 </div>
                 <div class="experience-detail">
                   <div class="experience-header">
@@ -370,29 +615,41 @@
                       <h3>DevOps Engineer</h3>
                       <p class="company">Hydroneo Co., Ltd.</p>
                     </div>
-                    <span class="period" data-i18n="period1">มิ.ย. 2567 – ก.พ. 2568</span>
+                    <span class="period" data-i18n="period1">
+                      มิ.ย. 2567 – ก.พ. 2568
+                    </span>
                   </div>
                   <ul class="responsibility-list">
-                    <li data-i18n="exp1b1">สร้างและดูแล CI/CD Pipeline ด้วย Jenkins และ GitLab</li>
-                    <li data-i18n="exp1b2">บริหาร Infrastructure as Code ด้วย Terraform และ CloudFormation</li>
-                    <li data-i18n="exp1b3">บริหาร Kubernetes Cluster และ Helm Charts</li>
-                    <li data-i18n="exp1b4">มอนิเตอร์ระบบด้วย Grafana, Prometheus และ ELK</li>
-                    <li data-i18n="exp1b5">ปรับปรุงระบบ Cloud บน AWS, Azure และ GCP</li>
+                    <li data-i18n="exp1a">
+                      สร้างและดูแล CI/CD Pipeline ด้วย Jenkins และ GitLab
+                    </li>
+                    <li data-i18n="exp1b">
+                      บริหาร Infrastructure as Code ด้วย Terraform และ CloudFormation
+                    </li>
+                    <li data-i18n="exp1c">
+                      บริหาร Kubernetes Cluster และ Helm Charts
+                    </li>
+                    <li data-i18n="exp1d">
+                      มอนิเตอร์ระบบด้วย Grafana, Prometheus และ ELK
+                    </li>
+                    <li data-i18n="exp1e">
+                      ปรับปรุงระบบ Cloud บน AWS, Azure และ GCP
+                    </li>
                   </ul>
                   <div class="product-logos">
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg" alt="" width="14" height="14">Jenkins</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gitlab.svg" alt="" width="14" height="14">GitLab</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/terraform.svg" alt="" width="14" height="14">Terraform</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kubernetes.svg" alt="" width="14" height="14">Kubernetes</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/helm.svg" alt="" width="14" height="14">Helm</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/grafana.svg" alt="" width="14" height="14">Grafana</span>
+                    <span class="product-logo">Jenkins</span>
+                    <span class="product-logo">GitLab</span>
+                    <span class="product-logo">Terraform</span>
+                    <span class="product-logo">Kubernetes</span>
+                    <span class="product-logo">Helm</span>
+                    <span class="product-logo">Grafana</span>
                   </div>
                 </div>
               </article>
 
               <article class="experience-card">
                 <div class="experience-marker">
-                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg" alt="" width="22" height="22">
+                  <i class="fa-solid fa-server" aria-hidden="true"></i>
                 </div>
                 <div class="experience-detail">
                   <div class="experience-header">
@@ -400,27 +657,37 @@
                       <h3>System Engineer</h3>
                       <p class="company">Asiacab Co., Ltd.</p>
                     </div>
-                    <span class="period" data-i18n="period2">ม.ค. 2566 – ต.ค. 2566</span>
+                    <span class="period" data-i18n="period2">
+                      ม.ค. 2566 – ต.ค. 2566
+                    </span>
                   </div>
                   <ul class="responsibility-list">
-                    <li data-i18n="exp2b1">มอนิเตอร์และดูแลระบบบน Microsoft Azure Cloud</li>
-                    <li data-i18n="exp2b2">ติดตั้งและกำหนดค่า Jenkins, GitLab และ Kubernetes</li>
-                    <li data-i18n="exp2b3">ดูแล Amazon RDS และเว็บไซต์ WordPress</li>
-                    <li data-i18n="exp2b4">บริหารจัดการ DNS ด้วย AWS Route 53</li>
+                    <li data-i18n="exp2a">
+                      มอนิเตอร์และดูแลระบบบน Microsoft Azure Cloud
+                    </li>
+                    <li data-i18n="exp2b">
+                      ติดตั้งและกำหนดค่า Jenkins, GitLab และ Kubernetes
+                    </li>
+                    <li data-i18n="exp2c">
+                      ดูแล Amazon RDS และเว็บไซต์ WordPress
+                    </li>
+                    <li data-i18n="exp2d">
+                      บริหารจัดการ DNS ด้วย AWS Route 53
+                    </li>
                   </ul>
                   <div class="product-logos">
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg" alt="" width="14" height="14">Azure</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg" alt="" width="14" height="14">Jenkins</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gitlab.svg" alt="" width="14" height="14">GitLab</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kubernetes.svg" alt="" width="14" height="14">Kubernetes</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wordpress.svg" alt="" width="14" height="14">WordPress</span>
+                    <span class="product-logo">Azure</span>
+                    <span class="product-logo">Jenkins</span>
+                    <span class="product-logo">GitLab</span>
+                    <span class="product-logo">Kubernetes</span>
+                    <span class="product-logo">WordPress</span>
                   </div>
                 </div>
               </article>
 
               <article class="experience-card">
                 <div class="experience-marker">
-                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonwebservices.svg" alt="" width="22" height="22">
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
                 </div>
                 <div class="experience-detail">
                   <div class="experience-header">
@@ -428,24 +695,32 @@
                       <h3>System Engineer</h3>
                       <p class="company">Best SERV Consulting Co., Ltd.</p>
                     </div>
-                    <span class="period" data-i18n="period3">มิ.ย. 2563 – ธ.ค. 2564</span>
+                    <span class="period" data-i18n="period3">
+                      มิ.ย. 2563 – ธ.ค. 2564
+                    </span>
                   </div>
                   <ul class="responsibility-list">
-                    <li data-i18n="exp3b1">มอนิเตอร์ AWS Infrastructure ด้วย CloudWatch</li>
-                    <li data-i18n="exp3b2">ติดตามประสิทธิภาพและสถานะระบบด้วย Datadog</li>
-                    <li data-i18n="exp3b3">ติดตามและจัดการปัญหาผ่าน Jira Service Management</li>
+                    <li data-i18n="exp3a">
+                      มอนิเตอร์ AWS Infrastructure ด้วย CloudWatch
+                    </li>
+                    <li data-i18n="exp3b">
+                      ติดตามประสิทธิภาพและสถานะระบบด้วย Datadog
+                    </li>
+                    <li data-i18n="exp3c">
+                      ติดตามและจัดการปัญหาผ่าน Jira Service Management
+                    </li>
                   </ul>
                   <div class="product-logos">
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonwebservices.svg" alt="" width="14" height="14">AWS</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/datadog.svg" alt="" width="14" height="14">Datadog</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jira.svg" alt="" width="14" height="14">Jira</span>
+                    <span class="product-logo">AWS</span>
+                    <span class="product-logo">Datadog</span>
+                    <span class="product-logo">Jira</span>
                   </div>
                 </div>
               </article>
 
               <article class="experience-card">
                 <div class="experience-marker">
-                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ibm.svg" alt="" width="22" height="22">
+                  <i class="fa-solid fa-database" aria-hidden="true"></i>
                 </div>
                 <div class="experience-detail">
                   <div class="experience-header">
@@ -453,24 +728,32 @@
                       <h3>System Operator</h3>
                       <p class="company">ABC Technology Co., Ltd.</p>
                     </div>
-                    <span class="period" data-i18n="period4">พ.ค. 2550 – เม.ย. 2551</span>
+                    <span class="period" data-i18n="period4">
+                      พ.ค. 2550 – เม.ย. 2551
+                    </span>
                   </div>
                   <ul class="responsibility-list">
-                    <li data-i18n="exp4b1">ปฏิบัติงานและดูแลระบบภายใน Data Center</li>
-                    <li data-i18n="exp4b2">ดูแลเครื่องแม่ข่าย IBM pSeries และ IBM xSeries</li>
-                    <li data-i18n="exp4b3">ใช้ IBM Tivoli สำหรับมอนิเตอร์ระบบ</li>
+                    <li data-i18n="exp4a">
+                      ปฏิบัติงานและดูแลระบบภายใน Data Center
+                    </li>
+                    <li data-i18n="exp4b">
+                      ดูแลเครื่องแม่ข่าย IBM pSeries และ IBM xSeries
+                    </li>
+                    <li data-i18n="exp4c">
+                      ใช้ IBM Tivoli สำหรับมอนิเตอร์ระบบ
+                    </li>
                   </ul>
                   <div class="product-logos">
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ibm.svg" alt="" width="14" height="14">IBM</span>
-                    <span class="product-logo"><i class="fa-solid fa-server" aria-hidden="true"></i>Data Center</span>
-                    <span class="product-logo"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>Tivoli</span>
+                    <span class="product-logo">IBM</span>
+                    <span class="product-logo">Data Center</span>
+                    <span class="product-logo">Tivoli</span>
                   </div>
                 </div>
               </article>
 
               <article class="experience-card">
                 <div class="experience-marker">
-                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg" alt="" width="22" height="22">
+                  <i class="fa-solid fa-terminal" aria-hidden="true"></i>
                 </div>
                 <div class="experience-detail">
                   <div class="experience-header">
@@ -478,18 +761,26 @@
                       <h3>Program Technical Support</h3>
                       <p class="company">BECi Corporation Co., Ltd.</p>
                     </div>
-                    <span class="period" data-i18n="period5">ส.ค. 2546 – มี.ค. 2550</span>
+                    <span class="period" data-i18n="period5">
+                      ส.ค. 2546 – มี.ค. 2550
+                    </span>
                   </div>
                   <ul class="responsibility-list">
-                    <li data-i18n="exp5b1">ดูแล SMS Chat Server บน Solaris, JBoss และ MySQL</li>
-                    <li data-i18n="exp5b2">เขียนและแก้ไข Shell Script สำหรับระบบงาน</li>
-                    <li data-i18n="exp5b3">พัฒนาและแก้ไข JSP สำหรับระบบโหวตและระบบแชท</li>
+                    <li data-i18n="exp5a">
+                      ดูแล SMS Chat Server บน Solaris, JBoss และ MySQL
+                    </li>
+                    <li data-i18n="exp5b">
+                      เขียนและแก้ไข Shell Script สำหรับระบบงาน
+                    </li>
+                    <li data-i18n="exp5c">
+                      พัฒนาและแก้ไข JSP สำหรับระบบโหวตและระบบแชท
+                    </li>
                   </ul>
                   <div class="product-logos">
-                    <span class="product-logo"><i class="fa-solid fa-sun" aria-hidden="true"></i>Solaris</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redhat.svg" alt="" width="14" height="14">JBoss</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mysql.svg" alt="" width="14" height="14">MySQL</span>
-                    <span class="product-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gnubash.svg" alt="" width="14" height="14">Shell Script</span>
+                    <span class="product-logo">Solaris</span>
+                    <span class="product-logo">JBoss</span>
+                    <span class="product-logo">MySQL</span>
+                    <span class="product-logo">Shell Script</span>
                   </div>
                 </div>
               </article>
@@ -498,10 +789,12 @@
           </div>
         </section>
 
-        <!-- Education -->
+        <!-- การศึกษา -->
         <section class="section-card">
           <div class="section-heading">
-            <div class="section-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+            <div class="section-icon">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            </div>
             <div>
               <span class="section-subtitle">Education</span>
               <h2 data-i18n="educationHeading">การศึกษา</h2>
@@ -510,20 +803,30 @@
 
           <div class="section-body">
             <div class="education-block">
-              <div class="education-logo"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></div>
+              <div class="education-logo">
+                <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+              </div>
               <div>
-                <h3 data-i18n="degree">วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์</h3>
-                <p class="education-name" data-i18n="university">มหาวิทยาลัยราชภัฏอุบลราชธานี</p>
-                <p class="education-meta" data-i18n="eduMeta">สำเร็จการศึกษา พ.ศ. 2544</p>
+                <h3 data-i18n="degree">
+                  วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์
+                </h3>
+                <p class="education-name" data-i18n="university">
+                  มหาวิทยาลัยราชภัฏอุบลราชธานี
+                </p>
+                <p class="education-meta" data-i18n="graduation">
+                  สำเร็จการศึกษา พ.ศ. 2544
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- ===================== PORTFOLIO SLIDESHOW ===================== -->
+        <!-- ภาพผลงาน -->
         <section class="section-card slideshow-section">
           <div class="section-heading">
-            <div class="section-icon"><i class="fa-solid fa-images" aria-hidden="true"></i></div>
+            <div class="section-icon">
+              <i class="fa-solid fa-images" aria-hidden="true"></i>
+            </div>
             <div>
               <span class="section-subtitle">Gallery</span>
               <h2 data-i18n="galleryHeading">ภาพผลงาน</h2>
@@ -531,156 +834,233 @@
           </div>
 
           <div class="section-body">
-            <div class="slideshow" id="portfolioSlideshow"
-                 role="region" aria-roledescription="carousel"
-                 aria-label="ภาพผลงาน DevOps" tabindex="0">
-
+            <div
+              class="slideshow"
+              id="portfolioSlideshow"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="ภาพผลงาน DevOps"
+              tabindex="0"
+            >
               <div class="slideshow-track">
-
                 <article class="slide active" aria-hidden="false">
-                  <img src="images/slideshow/devops-project-1.jpg"
-                       alt="แดชบอร์ด CI/CD Pipeline บน Jenkins"
-                       width="1200" height="675">
+                  <img
+                    src="images/slideshow/devops-project-1.jpg"
+                    alt="ภาพผลงานระบบ CI/CD Pipeline"
+                    width="1200"
+                    height="675"
+                    loading="eager"
+                    decoding="async"
+                  >
                   <div class="slide-overlay">
-                    <span class="slide-number"></span>
-                    <h3 data-i18n="slideTitle1">CI/CD Pipeline Automation</h3>
-                    <p data-i18n="slideDescription1">ระบบ Build, Test และ Deploy อัตโนมัติด้วย Jenkins และ GitLab CI/CD</p>
+                    <span class="slide-number">01 / 03</span>
+                    <h3>CI/CD Pipeline Automation</h3>
+                    <p data-i18n="slide1">
+                      ระบบ Build, Test และ Deploy อัตโนมัติด้วย Jenkins และ GitLab CI/CD
+                    </p>
                   </div>
                 </article>
 
                 <article class="slide" aria-hidden="true">
-                  <img src="images/slideshow/devops-project-2.jpg"
-                       alt="หน้าจอบริหาร Kubernetes Cluster"
-                       width="1200" height="675" loading="lazy">
+                  <img
+                    src="images/slideshow/devops-project-2.jpg"
+                    alt="ภาพผลงาน Kubernetes Infrastructure"
+                    width="1200"
+                    height="675"
+                    loading="eager"
+                    decoding="async"
+                  >
                   <div class="slide-overlay">
-                    <span class="slide-number"></span>
-                    <h3 data-i18n="slideTitle2">Kubernetes Infrastructure</h3>
-                    <p data-i18n="slideDescription2">บริหาร Container และ Deployment ด้วย Kubernetes, Docker และ Helm</p>
+                    <span class="slide-number">02 / 03</span>
+                    <h3>Kubernetes Infrastructure</h3>
+                    <p data-i18n="slide2">
+                      บริหาร Container และ Deployment ด้วย Kubernetes, Docker และ Helm
+                    </p>
                   </div>
                 </article>
 
                 <article class="slide" aria-hidden="true">
-                  <img src="images/slideshow/devops-project-3.jpg"
-                       alt="Grafana Dashboard แสดง Metrics ของระบบ"
-                       width="1200" height="675" loading="lazy">
+                  <img
+                    src="images/slideshow/devops-project-3.jpg"
+                    alt="ภาพผลงาน Monitoring Dashboard"
+                    width="1200"
+                    height="675"
+                    loading="eager"
+                    decoding="async"
+                  >
                   <div class="slide-overlay">
-                    <span class="slide-number"></span>
-                    <h3 data-i18n="slideTitle3">Monitoring &amp; Observability</h3>
-                    <p data-i18n="slideDescription3">Dashboard สำหรับตรวจสอบระบบด้วย Grafana และ Prometheus</p>
+                    <span class="slide-number">03 / 03</span>
+                    <h3>Monitoring &amp; Observability</h3>
+                    <p data-i18n="slide3">
+                      Dashboard สำหรับตรวจสอบระบบด้วย Grafana และ Prometheus
+                    </p>
                   </div>
                 </article>
-
               </div>
 
-              <button class="slide-control slide-previous" type="button" aria-label="ภาพก่อนหน้า">
+              <button
+                class="slide-control slide-previous"
+                type="button"
+                aria-label="ภาพก่อนหน้า"
+              >
                 <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
               </button>
-              <button class="slide-control slide-next" type="button" aria-label="ภาพถัดไป">
+
+              <button
+                class="slide-control slide-next"
+                type="button"
+                aria-label="ภาพถัดไป"
+              >
                 <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
               </button>
 
-              <div class="slide-indicators" role="group" aria-label="เลือกภาพ">
-                <button class="slide-dot active" type="button" data-slide="0" aria-label="แสดงภาพที่ 1" aria-current="true"></button>
-                <button class="slide-dot" type="button" data-slide="1" aria-label="แสดงภาพที่ 2" aria-current="false"></button>
-                <button class="slide-dot" type="button" data-slide="2" aria-label="แสดงภาพที่ 3" aria-current="false"></button>
+              <div
+                class="slide-indicators"
+                role="group"
+                aria-label="เลือกภาพ"
+              >
+                <button
+                  class="slide-dot active"
+                  type="button"
+                  data-slide="0"
+                  aria-label="แสดงภาพที่ 1"
+                  aria-current="true"
+                ></button>
+                <button
+                  class="slide-dot"
+                  type="button"
+                  data-slide="1"
+                  aria-label="แสดงภาพที่ 2"
+                ></button>
+                <button
+                  class="slide-dot"
+                  type="button"
+                  data-slide="2"
+                  aria-label="แสดงภาพที่ 3"
+                ></button>
               </div>
 
-              <button class="slide-autoplay" type="button"
-                      aria-label="หยุดการเลื่อนภาพอัตโนมัติ" aria-pressed="false">
+              <button
+                class="slide-autoplay"
+                type="button"
+                aria-label="หยุดการเลื่อนภาพอัตโนมัติ"
+                aria-pressed="false"
+              >
                 <i class="fa-solid fa-pause" aria-hidden="true"></i>
               </button>
-
             </div>
           </div>
         </section>
 
-        <!-- Demo Projects -->
+        <!-- โปรเจกต์ -->
         <section class="section-card">
           <div class="section-heading">
-            <div class="section-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+            <div class="section-icon">
+              <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+            </div>
             <div>
               <span class="section-subtitle">Portfolio</span>
-              <h2 data-i18n="projectsHeading">Demo Projects</h2>
+              <h2>Demo Projects</h2>
             </div>
           </div>
 
           <div class="section-body">
             <div class="project-grid">
-
-              <a class="project-card" href="https://hydroneoth.grafana.net" target="_blank" rel="noopener noreferrer">
+              <a
+                class="project-card"
+                href="https://hydroneoth.grafana.net"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div class="project-logo">
-                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/grafana.svg" alt="" width="26" height="26">
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
                 </div>
                 <h3>Grafana Dashboard</h3>
-                <p data-i18n="project1Desc">Dashboard สำหรับแสดง Monitoring Metrics และสถานะระบบ</p>
-                <span class="project-link">
-                  <span data-i18n="openSite">เปิดเว็บไซต์</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                <p data-i18n="project1">
+                  Dashboard สำหรับแสดง Monitoring Metrics และสถานะระบบ
+                </p>
+                <span class="project-link" data-i18n="openSite">
+                  เปิดเว็บไซต์
                 </span>
               </a>
 
-              <a class="project-card" href="https://boonthanomh-cyber.github.io/blogy-05/" target="_blank" rel="noopener noreferrer">
+              <a
+                class="project-card"
+                href="https://boonthanomh-cyber.github.io/blogy-05/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div class="project-logo">
-                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wordpress.svg" alt="" width="26" height="26">
+                  <i class="fa-solid fa-globe" aria-hidden="true"></i>
                 </div>
                 <h3>WordPress Demo</h3>
-                <p data-i18n="project2Desc">เว็บไซต์ตัวอย่างสำหรับแสดงผลงานด้าน Web และ CMS</p>
-                <span class="project-link">
-                  <span data-i18n="openSite2">เปิดเว็บไซต์</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                <p data-i18n="project2">
+                  เว็บไซต์ตัวอย่างสำหรับแสดงผลงานด้าน Web และ CMS
+                </p>
+                <span class="project-link" data-i18n="openSite">
+                  เปิดเว็บไซต์
                 </span>
               </a>
 
-              <a class="project-card" href="https://github.com/boonthanomh-cyber/myresumeThai" target="_blank" rel="noopener noreferrer">
+              <a
+                class="project-card"
+                href="https://github.com/boonthanomh-cyber/myresumeThai"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div class="project-logo">
-                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="" width="26" height="26">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
                 </div>
                 <h3>Resume CI/CD</h3>
-                <p data-i18n="project3Desc">เว็บไซต์นี้ Deploy อัตโนมัติด้วย GitHub Actions และ GitHub Pages</p>
-                <span class="project-link">
-                  <span data-i18n="openRepo">ดู Source Code</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                <p data-i18n="project3">
+                  เว็บไซต์ Resume และ Source Code บน GitHub
+                </p>
+                <span class="project-link" data-i18n="openRepo">
+                  ดู Source Code
                 </span>
               </a>
-
             </div>
           </div>
         </section>
 
-        <!-- Courses -->
+        <!-- หลักสูตร -->
         <section class="section-card">
           <div class="section-heading">
-            <div class="section-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+            <div class="section-icon">
+              <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+            </div>
             <div>
               <span class="section-subtitle">Courses</span>
-              <h2 data-i18n="coursesHeading">หลักสูตรและการเรียนรู้ออนไลน์</h2>
+              <h2 data-i18n="coursesHeading">
+                หลักสูตรและการเรียนรู้ออนไลน์
+              </h2>
             </div>
           </div>
 
           <div class="section-body">
             <div class="training-grid">
               <div class="training-item">
-                <div class="training-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonwebservices.svg" alt="" width="22" height="22"></div>
+                <div class="training-logo">AWS</div>
                 <div><h3>AWS Essentials</h3><p>Udemy</p></div>
               </div>
               <div class="training-item">
-                <div class="training-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nginx.svg" alt="" width="22" height="22"></div>
+                <div class="training-logo">NG</div>
                 <div><h3>NGINX Web Server</h3><p>Udemy</p></div>
               </div>
               <div class="training-item">
-                <div class="training-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/edx.svg" alt="" width="22" height="22"></div>
+                <div class="training-logo">CS</div>
                 <div><h3>CS50 Web Programming</h3><p>edX</p></div>
               </div>
               <div class="training-item">
-                <div class="training-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg" alt="" width="22" height="22"></div>
+                <div class="training-logo">LX</div>
                 <div><h3>Introduction to Linux</h3><p>edX</p></div>
               </div>
               <div class="training-item">
-                <div class="training-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/freecodecamp.svg" alt="" width="22" height="22"></div>
+                <div class="training-logo">DO</div>
                 <div><h3>DevOps for Beginners</h3><p>freeCodeCamp</p></div>
               </div>
               <div class="training-item">
-                <div class="training-logo"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/grafana.svg" alt="" width="22" height="22"></div>
+                <div class="training-logo">GF</div>
                 <div><h3>Zabbix &amp; Grafana Tutorials</h3><p>sbcode.net</p></div>
               </div>
             </div>
@@ -693,15 +1073,691 @@
     <footer class="page-footer">
       <p>
         © <span id="currentYear"></span>
-        บุญถนอม หาญกลาง — <span data-i18n="footerText">DevOps Engineer Portfolio</span>
+        <span data-i18n="footerName">บุญถนอม หาญกลาง</span>
+        — DevOps Engineer Portfolio
       </p>
     </footer>
   </div>
 
-  <button class="back-to-top" id="backToTop" type="button" aria-label="กลับขึ้นด้านบน">
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="กลับขึ้นด้านบน"
+  >
     <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
   </button>
 
-  <script src="script.js" defer></script>
+  <!-- JavaScript อยู่ในไฟล์นี้แล้ว: ไม่ต้องโหลด script.js ซ้ำ -->
+  <script>
+    (() => {
+      'use strict';
+
+      /*
+       * แก้เฉพาะ 3 ค่านี้เมื่อพร้อมแสดงข้อมูลจริง
+       * อย่าใส่เครื่องหมาย * เพราะ tel:, mailto: และปุ่มคัดลอกจะใช้ไม่ได้
+       */
+      const CONTACT = {
+        phone: '094-964-3966', // ตัวอย่างรูปแบบ: 0812345678
+        email: 'boonthanom.h@gmail.com', // ตัวอย่างรูปแบบ: name@example.com
+        line: '0949643966'   // ใส่ LINE ID จริง
+      };
+
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const $$ = (selector, root = document) =>
+        Array.from(root.querySelectorAll(selector));
+
+      const motionQuery =
+        window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      const reducedMotion = () => motionQuery.matches;
+
+      /* 1) ข้อมูลติดต่อ */
+      const phoneLink = $('#phoneLink');
+      const emailLink = $('#emailLink');
+      const contactButton = $('#contactButton');
+      const lineButton = $('#lineCopyButton');
+      const lineValue = $('#lineValue');
+      const copyStatus = $('#copyStatus');
+
+      if (CONTACT.phone) {
+        const dialable = CONTACT.phone.replace(/[^\d+]/g, '');
+
+        phoneLink.href = `tel:${dialable}`;
+        phoneLink.textContent = CONTACT.phone;
+      }
+
+      if (CONTACT.email) {
+        const emailHref = `mailto:${CONTACT.email}`;
+
+        emailLink.href = emailHref;
+        emailLink.textContent = CONTACT.email;
+        contactButton.href = emailHref;
+      }
+
+      if (CONTACT.line) {
+        lineValue.textContent = CONTACT.line;
+        lineButton.disabled = false;
+
+        lineButton.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(CONTACT.line);
+            lineButton.classList.add('copied');
+
+            copyStatus.textContent =
+              document.documentElement.lang === 'en'
+                ? 'LINE ID copied'
+                : 'คัดลอก Line ID แล้ว';
+
+            window.setTimeout(() => {
+              lineButton.classList.remove('copied');
+              copyStatus.textContent = '';
+            }, 1800);
+          } catch (error) {
+            copyStatus.textContent =
+              document.documentElement.lang === 'en'
+                ? 'Unable to copy LINE ID'
+                : 'ไม่สามารถคัดลอก Line ID ได้';
+          }
+        });
+      }
+
+      /* 2) รูปโปรไฟล์ + favicon */
+      const photo = $('#profilePhoto');
+      const photoWrapper = $('#profilePhotoWrapper');
+      const favicon = $('#siteFavicon');
+
+      const photoCandidates = [
+        'images/profile.jpg',
+        'images/profile.JPG',
+        'images/profile.jpeg',
+        'images/profile.png'
+      ];
+
+      let photoCandidateIndex = 0;
+
+      function setFallbackFavicon() {
+        const svg =
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">' +
+          '<rect width="64" height="64" rx="14" fill="#1d4ed8"/>' +
+          '<text x="32" y="41" text-anchor="middle" ' +
+          'font-family="Arial,sans-serif" font-size="27" ' +
+          'font-weight="700" fill="white">BH</text></svg>';
+
+        favicon.type = 'image/svg+xml';
+        favicon.href =
+          `data:image/svg+xml,${encodeURIComponent(svg)}`;
+      }
+
+      function tryNextPhoto() {
+        photoCandidateIndex += 1;
+
+        if (photoCandidateIndex >= photoCandidates.length) {
+          photoWrapper.classList.add('is-missing');
+          setFallbackFavicon();
+          console.warn(
+            'ไม่พบรูปโปรไฟล์: ตรวจสอบชื่อไฟล์ในโฟลเดอร์ images/'
+          );
+          return;
+        }
+
+        photo.src = photoCandidates[photoCandidateIndex];
+      }
+
+      photo.addEventListener('load', () => {
+        if (!photo.naturalWidth) return;
+
+        photoWrapper.classList.remove('is-missing');
+
+        const source = photo.getAttribute('src');
+        favicon.href = new URL(source, document.baseURI).href;
+        favicon.type =
+          source.toLowerCase().endsWith('.png')
+            ? 'image/png'
+            : 'image/jpeg';
+      });
+
+      photo.addEventListener('error', tryNextPhoto);
+
+      // จัดการกรณีเบราว์เซอร์โหลดรูปเสร็จก่อนผูก event
+      if (photo.complete) {
+        if (photo.naturalWidth > 0) {
+          favicon.href = new URL(
+            photo.getAttribute('src'),
+            document.baseURI
+          ).href;
+        } else {
+          tryNextPhoto();
+        }
+      }
+
+      /* 3) ปี, พิมพ์ PDF, กลับขึ้นด้านบน */
+      $('#currentYear').textContent = new Date().getFullYear();
+
+      $('#printButton').addEventListener('click', () => {
+        window.print();
+      });
+
+      const backToTop = $('#backToTop');
+
+      function updateBackToTop() {
+        backToTop.classList.toggle(
+          'is-visible',
+          window.scrollY > 320
+        );
+      }
+
+      updateBackToTop();
+
+      window.addEventListener(
+        'scroll',
+        updateBackToTop,
+        { passive: true }
+      );
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: reducedMotion() ? 'instant' : 'smooth'
+        });
+      });
+
+      /* 4) แถบระดับภาษา */
+      const progressBars = $$('.progress-bar[data-width]');
+
+      function fillProgress(bar) {
+        const value = Number(bar.dataset.width);
+        const safeValue = Number.isFinite(value)
+          ? Math.min(100, Math.max(0, value))
+          : 0;
+
+        bar.style.width = `${safeValue}%`;
+      }
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries, currentObserver) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              fillProgress(entry.target);
+              currentObserver.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        progressBars.forEach((bar) => observer.observe(bar));
+      } else {
+        progressBars.forEach(fillProgress);
+      }
+
+      /* 5) Slideshow: มีตัวควบคุมเพียงชุดเดียว */
+      const carousel = $('#portfolioSlideshow');
+      const slides = $$('.slide', carousel);
+      const dots = $$('.slide-dot', carousel);
+      const previousButton = $('.slide-previous', carousel);
+      const nextButton = $('.slide-next', carousel);
+      const autoplayButton = $('.slide-autoplay', carousel);
+
+      let currentSlide = 0;
+      let autoplayTimer = null;
+      let userPaused = reducedMotion();
+      let hovering = false;
+      let focused = false;
+
+      function renderSlide() {
+        slides.forEach((slide, index) => {
+          const active = index === currentSlide;
+
+          slide.classList.toggle('active', active);
+          slide.setAttribute('aria-hidden', String(!active));
+        });
+
+        dots.forEach((dot, index) => {
+          const active = index === currentSlide;
+
+          dot.classList.toggle('active', active);
+
+          if (active) {
+            dot.setAttribute('aria-current', 'true');
+          } else {
+            dot.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      function goToSlide(index) {
+        if (!slides.length) return;
+
+        currentSlide =
+          (index + slides.length) % slides.length;
+
+        renderSlide();
+      }
+
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+
+      function previousSlide() {
+        goToSlide(currentSlide - 1);
+      }
+
+      function stopAutoplay() {
+        window.clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+
+      function syncAutoplay() {
+        stopAutoplay();
+
+        if (
+          slides.length < 2 ||
+          userPaused ||
+          hovering ||
+          focused ||
+          document.hidden
+        ) {
+          return;
+        }
+
+        autoplayTimer = window.setInterval(
+          nextSlide,
+          5500
+        );
+      }
+
+      function updateAutoplayButton() {
+        autoplayButton.setAttribute(
+          'aria-pressed',
+          String(userPaused)
+        );
+
+        autoplayButton.setAttribute(
+          'aria-label',
+          userPaused
+            ? 'เริ่มการเลื่อนภาพอัตโนมัติ'
+            : 'หยุดการเลื่อนภาพอัตโนมัติ'
+        );
+
+        const icon = $('i', autoplayButton);
+
+        icon.className = userPaused
+          ? 'fa-solid fa-play'
+          : 'fa-solid fa-pause';
+      }
+
+      if (slides.length < 2) {
+        [
+          previousButton,
+          nextButton,
+          autoplayButton,
+          $('.slide-indicators', carousel)
+        ].forEach((element) => {
+          if (element) element.hidden = true;
+        });
+      }
+
+      slides.forEach((slide, index) => {
+        const number = $('.slide-number', slide);
+
+        if (number) {
+          number.textContent =
+            `${String(index + 1).padStart(2, '0')} / ` +
+            `${String(slides.length).padStart(2, '0')}`;
+        }
+
+        const image = $('img', slide);
+
+        if (image) {
+          const reportError = () => {
+            slide.classList.add('img-error');
+
+            console.error(
+              'โหลดภาพสไลด์ไม่สำเร็จ:',
+              image.getAttribute('src')
+            );
+          };
+
+          image.addEventListener('error', reportError);
+
+          if (image.complete && image.naturalWidth === 0) {
+            reportError();
+          }
+        }
+      });
+
+      previousButton.addEventListener('click', () => {
+        previousSlide();
+        syncAutoplay();
+      });
+
+      nextButton.addEventListener('click', () => {
+        nextSlide();
+        syncAutoplay();
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          goToSlide(index);
+          syncAutoplay();
+        });
+      });
+
+      autoplayButton.addEventListener('click', () => {
+        userPaused = !userPaused;
+
+        updateAutoplayButton();
+        syncAutoplay();
+      });
+
+      carousel.addEventListener('mouseenter', () => {
+        hovering = true;
+        syncAutoplay();
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        hovering = false;
+        syncAutoplay();
+      });
+
+      carousel.addEventListener('focusin', () => {
+        focused = true;
+        syncAutoplay();
+      });
+
+      carousel.addEventListener('focusout', () => {
+        window.setTimeout(() => {
+          focused = carousel.contains(
+            document.activeElement
+          );
+
+          syncAutoplay();
+        }, 0);
+      });
+
+      carousel.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          nextSlide();
+          syncAutoplay();
+        }
+
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          previousSlide();
+          syncAutoplay();
+        }
+      });
+
+      let touchStartX = null;
+
+      carousel.addEventListener(
+        'touchstart',
+        (event) => {
+          touchStartX = event.touches[0].clientX;
+        },
+        { passive: true }
+      );
+
+      carousel.addEventListener(
+        'touchend',
+        (event) => {
+          if (touchStartX === null) return;
+
+          const difference =
+            event.changedTouches[0].clientX - touchStartX;
+
+          if (Math.abs(difference) > 50) {
+            if (difference < 0) {
+              nextSlide();
+            } else {
+              previousSlide();
+            }
+
+            syncAutoplay();
+          }
+
+          touchStartX = null;
+        },
+        { passive: true }
+      );
+
+      document.addEventListener(
+        'visibilitychange',
+        syncAutoplay
+      );
+
+      const onMotionChange = () => {
+        if (reducedMotion()) {
+          userPaused = true;
+          updateAutoplayButton();
+        }
+
+        syncAutoplay();
+      };
+
+      if (motionQuery.addEventListener) {
+        motionQuery.addEventListener(
+          'change',
+          onMotionChange
+        );
+      }
+
+      renderSlide();
+      updateAutoplayButton();
+      syncAutoplay();
+
+      /* 6) สลับภาษา: ใช้ textContent ไม่ใช้ innerHTML */
+      const translations = {
+        th: {
+          skipLink: 'ข้ามไปยังเนื้อหาหลัก',
+          name: 'บุญถนอม หาญกลาง',
+          summary:
+            'มีประสบการณ์ด้าน Cloud Infrastructure, CI/CD, Infrastructure as Code, Kubernetes, Monitoring และ Linux Server รวมถึงการดูแลระบบบน AWS, Microsoft Azure และ Google Cloud',
+          availability:
+            'กำลังมองหาโอกาสงานด้าน DevOps และ Cloud Engineering',
+          contactButton: 'ติดต่อฉัน',
+          printButton: 'บันทึกเป็น PDF',
+          downloadButton: 'ดาวน์โหลด Resume',
+          contactHeading: 'ข้อมูลติดต่อ',
+          labelPhone: 'เบอร์โทรศัพท์',
+          labelEmail: 'อีเมล',
+          labelAddress: 'ที่อยู่/ที่พัก',
+          addressValue:
+            'บางนาอพาร์ตเมนต์ ซอยสุขุมวิท 70/5 แขวงบางนา เขตบางนา กรุงเทพฯ 10260',
+          skillsHeading: 'ทักษะด้านเทคนิค',
+          languageHeading: 'ภาษาอังกฤษ',
+          listening: 'การฟัง',
+          speaking: 'การพูด',
+          reading: 'การอ่าน',
+          writing: 'การเขียน',
+          levelGood: 'ดี',
+          levelIntermediate: 'ปานกลาง',
+          experienceHeading: 'ประสบการณ์ทำงาน',
+          period1: 'มิ.ย. 2567 – ก.พ. 2568',
+          period2: 'ม.ค. 2566 – ต.ค. 2566',
+          period3: 'มิ.ย. 2563 – ธ.ค. 2564',
+          period4: 'พ.ค. 2550 – เม.ย. 2551',
+          period5: 'ส.ค. 2546 – มี.ค. 2550',
+          exp1a: 'สร้างและดูแล CI/CD Pipeline ด้วย Jenkins และ GitLab',
+          exp1b: 'บริหาร Infrastructure as Code ด้วย Terraform และ CloudFormation',
+          exp1c: 'บริหาร Kubernetes Cluster และ Helm Charts',
+          exp1d: 'มอนิเตอร์ระบบด้วย Grafana, Prometheus และ ELK',
+          exp1e: 'ปรับปรุงระบบ Cloud บน AWS, Azure และ GCP',
+          exp2a: 'มอนิเตอร์และดูแลระบบบน Microsoft Azure Cloud',
+          exp2b: 'ติดตั้งและกำหนดค่า Jenkins, GitLab และ Kubernetes',
+          exp2c: 'ดูแล Amazon RDS และเว็บไซต์ WordPress',
+          exp2d: 'บริหารจัดการ DNS ด้วย AWS Route 53',
+          exp3a: 'มอนิเตอร์ AWS Infrastructure ด้วย CloudWatch',
+          exp3b: 'ติดตามประสิทธิภาพและสถานะระบบด้วย Datadog',
+          exp3c: 'ติดตามและจัดการปัญหาผ่าน Jira Service Management',
+          exp4a: 'ปฏิบัติงานและดูแลระบบภายใน Data Center',
+          exp4b: 'ดูแลเครื่องแม่ข่าย IBM pSeries และ IBM xSeries',
+          exp4c: 'ใช้ IBM Tivoli สำหรับมอนิเตอร์ระบบ',
+          exp5a: 'ดูแล SMS Chat Server บน Solaris, JBoss และ MySQL',
+          exp5b: 'เขียนและแก้ไข Shell Script สำหรับระบบงาน',
+          exp5c: 'พัฒนาและแก้ไข JSP สำหรับระบบโหวตและระบบแชท',
+          educationHeading: 'การศึกษา',
+          degree: 'วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์',
+          university: 'มหาวิทยาลัยราชภัฏอุบลราชธานี',
+          graduation: 'สำเร็จการศึกษา พ.ศ. 2544',
+          galleryHeading: 'ภาพผลงาน',
+          slide1:
+            'ระบบ Build, Test และ Deploy อัตโนมัติด้วย Jenkins และ GitLab CI/CD',
+          slide2:
+            'บริหาร Container และ Deployment ด้วย Kubernetes, Docker และ Helm',
+          slide3:
+            'Dashboard สำหรับตรวจสอบระบบด้วย Grafana และ Prometheus',
+          project1:
+            'Dashboard สำหรับแสดง Monitoring Metrics และสถานะระบบ',
+          project2:
+            'เว็บไซต์ตัวอย่างสำหรับแสดงผลงานด้าน Web และ CMS',
+          project3:
+            'เว็บไซต์ Resume และ Source Code บน GitHub',
+          openSite: 'เปิดเว็บไซต์',
+          openRepo: 'ดู Source Code',
+          coursesHeading: 'หลักสูตรและการเรียนรู้ออนไลน์',
+          footerName: 'บุญถนอม หาญกลาง'
+        },
+
+        en: {
+          skipLink: 'Skip to main content',
+          name: 'Boonthanom Hanklang',
+          summary:
+            'Experienced in cloud infrastructure, CI/CD, Infrastructure as Code, Kubernetes, monitoring and Linux servers, including AWS, Microsoft Azure and Google Cloud.',
+          availability:
+            'Open to DevOps and Cloud Engineering opportunities',
+          contactButton: 'Contact Me',
+          printButton: 'Save as PDF',
+          downloadButton: 'Download Resume',
+          contactHeading: 'Contact Information',
+          labelPhone: 'Phone',
+          labelEmail: 'Email',
+          labelAddress: 'Address',
+          addressValue:
+            'Bangna Apartment, Soi Sukhumvit 70/5, Bang Na, Bangkok 10260, Thailand',
+          skillsHeading: 'Technical Skills',
+          languageHeading: 'English Proficiency',
+          listening: 'Listening',
+          speaking: 'Speaking',
+          reading: 'Reading',
+          writing: 'Writing',
+          levelGood: 'Good',
+          levelIntermediate: 'Intermediate',
+          experienceHeading: 'Professional Experience',
+          period1: 'Jun 2024 – Feb 2025',
+          period2: 'Jan 2023 – Oct 2023',
+          period3: 'Jun 2020 – Dec 2021',
+          period4: 'May 2007 – Apr 2008',
+          period5: 'Aug 2003 – Mar 2007',
+          exp1a: 'Built and maintained CI/CD pipelines with Jenkins and GitLab',
+          exp1b: 'Managed Infrastructure as Code using Terraform and CloudFormation',
+          exp1c: 'Operated Kubernetes clusters and Helm charts',
+          exp1d: 'Monitored systems with Grafana, Prometheus and ELK',
+          exp1e: 'Improved cloud systems across AWS, Azure and GCP',
+          exp2a: 'Monitored and maintained Microsoft Azure workloads',
+          exp2b: 'Installed and configured Jenkins, GitLab and Kubernetes',
+          exp2c: 'Maintained Amazon RDS and WordPress websites',
+          exp2d: 'Managed DNS using AWS Route 53',
+          exp3a: 'Monitored AWS infrastructure with CloudWatch',
+          exp3b: 'Tracked performance and system health with Datadog',
+          exp3c: 'Managed incidents with Jira Service Management',
+          exp4a: 'Operated and maintained data centre systems',
+          exp4b: 'Supported IBM pSeries and IBM xSeries servers',
+          exp4c: 'Monitored systems using IBM Tivoli',
+          exp5a: 'Maintained SMS chat servers on Solaris, JBoss and MySQL',
+          exp5b: 'Wrote and maintained shell scripts',
+          exp5c: 'Developed and maintained JSP voting and chat systems',
+          educationHeading: 'Education',
+          degree: 'Bachelor of Science in Computer Science',
+          university: 'Ubon Ratchathani Rajabhat University',
+          graduation: 'Graduated 2001',
+          galleryHeading: 'Portfolio Gallery',
+          slide1:
+            'Automated build, test and deployment with Jenkins and GitLab CI/CD',
+          slide2:
+            'Managed containers and deployments with Kubernetes, Docker and Helm',
+          slide3:
+            'Monitoring dashboards built with Grafana and Prometheus',
+          project1:
+            'Dashboard showing monitoring metrics and system health',
+          project2:
+            'Sample website demonstrating web and CMS work',
+          project3:
+            'Resume website and source code on GitHub',
+          openSite: 'Visit Website',
+          openRepo: 'View Source Code',
+          coursesHeading: 'Courses and Online Learning',
+          footerName: 'Boonthanom Hanklang'
+        }
+      };
+
+      const languageButtons =
+        $$('.language-button[data-language]');
+
+      function setLanguage(language) {
+        const selectedLanguage =
+          language === 'en' ? 'en' : 'th';
+
+        const dictionary =
+          translations[selectedLanguage];
+
+        $$('[data-i18n]').forEach((element) => {
+          const key = element.dataset.i18n;
+
+          if (Object.hasOwn(dictionary, key)) {
+            element.textContent = dictionary[key];
+          }
+        });
+
+        document.documentElement.lang =
+          selectedLanguage;
+
+        document.title =
+          selectedLanguage === 'en'
+            ? 'Boonthanom Hanklang | DevOps Engineer'
+            : 'บุญถนอม หาญกลาง | DevOps Engineer';
+
+        languageButtons.forEach((button) => {
+          const active =
+            button.dataset.language === selectedLanguage;
+
+          button.classList.toggle('active', active);
+          button.setAttribute(
+            'aria-pressed',
+            String(active)
+          );
+        });
+
+        try {
+          localStorage.setItem(
+            'resume-language',
+            selectedLanguage
+          );
+        } catch (error) {
+          // เว็บไซต์ยังใช้งานได้แม้เบราว์เซอร์ปิด localStorage
+        }
+      }
+
+      languageButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          setLanguage(button.dataset.language);
+        });
+      });
+
+      let savedLanguage = 'th';
+
+      try {
+        savedLanguage =
+          localStorage.getItem('resume-language') || 'th';
+      } catch (error) {
+        // ใช้ค่าเริ่มต้นภาษาไทย
+      }
+
+      setLanguage(savedLanguage);
+    })();
+  </script>
 </body>
 </html>
